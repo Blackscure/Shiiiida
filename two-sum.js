@@ -7,18 +7,16 @@
 // Step 7. Store the number.
 
 
-function twoSum(nums, target) {
-    const map = {}
-    for (let i = 0; i < nums.length; i++) {
-        const currentNumber = nums[i];
-        const complement = target - currentNumber;
+function twoSum(nums,target){
+  const map = new Map();
 
-        if (map.hasOwnProperty(complement)) {
-            return [map[complement], i];
-        }
-
-        map[currentNumber] = i;
+  for (let i = 0; i < nums.length; i++){
+    neededValue = target - nums[i];
+    if(map.has(needeValue)){
+      return [map.get(needeValue, i)];
     }
+    map.set(nums[i], i);
+  }
 }
 
 const result = twoSum([2, 7, 11, 15], 9)
